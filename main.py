@@ -45,7 +45,6 @@ def is_short_link(link, token):
     response = requests.get(url, params=params)
     response.raise_for_status()
 
-<<<<<<< Updated upstream
     if 'error' in response.json():
         raise ValueError(f"VK API Ошибка: {response.json()['error']['error_msg']}")
         
@@ -59,10 +58,9 @@ def main():
     parser.add_argument('link', help='Введите ссылку:')
     args = parser.parse_args()
     long_url = args.link
-=======
+    
     if "response" not in response.json():
         raise KeyError("Отсутствует ключ 'response' в ответе от API")
->>>>>>> Stashed changes
 
     if "error" in response.json():
         raise ValueError(f"Ошибка VK API: {response.json()['error']['error_msg']}")
